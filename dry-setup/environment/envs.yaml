@@ -1,0 +1,25 @@
+dev:
+  aws_region: "us-east-1"
+  vpc:  
+    inputs:
+      vpc_cidr: "10.1.0.0/16"
+    tfvar_files:
+      - default.tfvars
+      - dev.tfvars
+  ec2:
+    tfvar_files:
+      - default.tfvars
+      - non-prod.tfvars
+
+prod:
+  aws_region: "us-east-1"
+  vpc:  
+    inputs:
+      vpc_cidr: "10.2.0.0/16"
+    tfvar_files:
+      - default.tfvars
+      - non-prod.tfvars
+  ec2:
+    tfvar_files:
+      - default.tfvars
+      - prod.tfvars
